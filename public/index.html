@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PIB</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script defer src=" https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"> </script>
+    <script defer src="./js/app.js"></script>
+    <link rel="stylesheet" href="/public/">
+</head>
+
+<body class="bg-dark">
+    <header>
+        <nav class="navbar navbar-expand-lg bg-dark">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="">PAISES PIB</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <button type="button" class="btn btn-primary btnManager mx-3 " id="btnRender5">GENERAR: 5 Países</button>
+                  </li>
+                  <li class="nav-item">
+                    <button type="button" class="btn btn-primary btnManager mx-3" id="btnRender10">SIGUIENTES: 10 Países</button>
+                  </li>
+                  <li class="nav-item">
+                    <button type="button" class="btn btn-primary btnManager mx-3" id="btnRender20">SIGUIENTES: 20 Países</button>
+                  </li>
+                  <li class="nav-item">
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+    </header>
+
+    <div class="bg-light">
+        <h6 class="">IMPORTANTE!: Estimado usuario de la API, tener presente que esta api usa un servidor gratuito para desplegar la base de datos, no clickear demasiadas veces consecutivas los botones de generar, puesto que se podria desconectar la base de datos. Para mas libertades, utilice la base de datos en su ambiente local.</h6>
+        <div class="row">
+            <div class="col w-33 py-5">
+        
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">País</th>
+                    <th scope="col">Continente</th>
+                    <th scope="col">Población</th>
+                    <th scope="col">PIB 2019</th>
+                    <th scope="col">PIB 2020</th>
+                    
+                </tr>
+            </thead>
+            <tbody id="datos">
+                <!-- datos -->
+            </tbody>
+        </table>
+    </div>
+        <div class="col w-33">
+            <form class="py-5">
+                <h3>Crear Registro País</h3>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" id="nameAdd" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Continente</label>
+                    <input type="text" class="form-control" id="continenteAdd" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Población</label>
+                    <input type="number" class="form-control" id="poblacionAdd" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">PIB 2019</label>
+                    <input type="number" class="form-control" id="Add2019" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">PIB 2020</label>
+                    <input type="number" class="form-control" id="Add2020" aria-describedby="emailHelp">
+                </div>
+                <button type="button" id="btnAdd" class="btn btn-primary">Agregar</button>
+            </form>
+        </div>
+        <div class="col w-33">
+        <form class="py-5 w-40 backfillManager">
+            <h2>Eliminar registro Pais</h2>
+            <div class="">
+                <label class="form-label">Nombre del país</label>
+                <input type="text" class="form-control" id="idDelete" placeholder="Italia">
+            </div>
+            <button type="button" class="btn btn-danger" id="btnDelete">Eliminar</button>
+        </form>
+    </div>
+    </div>
+</div>
+
+    <template id="templateDatos">
+        <tr>
+            <td id="1">Mark</td>
+            <td id="2"></td>
+            <td id="3"></td>
+            <td id="4">@mdo</td>
+            <td id="5">@mdo</td>
+        </tr>
+    </template>
+</div>
+<!-- FOOTER INICIO-->
+<footer class="bg-dark p-3 mt-5">
+    <p class="text-center m-0 text-muted">José Alvarado Mazzei</p>
+  </footer>
+<!-- FOOTER FIN-->
+</body>
+
+</html>
